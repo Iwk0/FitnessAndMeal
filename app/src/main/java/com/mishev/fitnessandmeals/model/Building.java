@@ -13,7 +13,7 @@ public class Building {
         if (floors == null) {
             floors = new ArrayList<>();
         }
-
+            //test
         floors.add(floor);
     }
 
