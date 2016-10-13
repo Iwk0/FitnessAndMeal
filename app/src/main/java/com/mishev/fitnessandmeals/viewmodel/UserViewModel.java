@@ -17,7 +17,6 @@ import rx.schedulers.Schedulers;
 
 public class UserViewModel {
 
-    public ObservableField<String> messageLabel;
     public ObservableField<User> user;
 
     private UserViewModelContract.MainView mainView;
@@ -25,10 +24,8 @@ public class UserViewModel {
     public UserViewModel(@NonNull UserViewModelContract.MainView mainView) {
         this.mainView = mainView;
 
-        messageLabel = new ObservableField<>();
-        messageLabel.set("constructor");
         user = new ObservableField<>();
-        user.set(new User("a","b"));
+        user.set(new User("a", "b"));
     }
 
     public void onClick(View view) {
@@ -50,7 +47,6 @@ public class UserViewModel {
                     public void call(List<Campus> campus) {
                         if (mainView != null) {
                             mainView.loadData(campus);
-                            messageLabel.set("get campus");
                         }
                     }
                 }, new Action1<Throwable>() {
