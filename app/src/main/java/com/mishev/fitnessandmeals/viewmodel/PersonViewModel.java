@@ -5,7 +5,6 @@ import android.support.annotation.NonNull;
 import android.view.View;
 
 import com.mishev.fitnessandmeals.model.Campus;
-import com.mishev.fitnessandmeals.model.User;
 
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
@@ -15,20 +14,17 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.schedulers.Schedulers;
 
-public class UserViewModel {
+public class PersonViewModel {
 
     public ObservableField<String> messageLabel;
-    public ObservableField<User> user;
 
     private UserViewModelContract.MainView mainView;
 
-    public UserViewModel(@NonNull UserViewModelContract.MainView mainView) {
+    public PersonViewModel(@NonNull UserViewModelContract.MainView mainView) {
         this.mainView = mainView;
 
         messageLabel = new ObservableField<>();
-        messageLabel.set("constructor");
-        user = new ObservableField<>();
-        user.set(new User("a","b"));
+        messageLabel.set("Person");
     }
 
     public void onClick(View view) {
@@ -50,7 +46,7 @@ public class UserViewModel {
                     public void call(List<Campus> campus) {
                         if (mainView != null) {
                             mainView.loadData(campus);
-                            messageLabel.set("get campus");
+                            messageLabel.set("get campus person");
                         }
                     }
                 }, new Action1<Throwable>() {

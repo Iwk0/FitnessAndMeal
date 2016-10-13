@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.mishev.fitnessandmeals.view.PersonView;
 import com.mishev.fitnessandmeals.view.UserView;
 
 public class MainActivity extends AppCompatActivity {
@@ -44,7 +45,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void selectItem(int position) {
-        Fragment fragment = new UserView();
+        Fragment fragment;
+
+        switch (position) {
+            case 0:
+                fragment = new UserView();
+                break;
+            default:
+                fragment = new PersonView();
+                break;
+        }
 
         FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction()
