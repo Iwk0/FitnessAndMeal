@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">FitnessAndMeals</string>
-    <string name="send_button">Send</string>
+    <string-array name="items">
+        <item>Item1</item>
+        <item>Item2</item>
+    </string-array>
 </resources>

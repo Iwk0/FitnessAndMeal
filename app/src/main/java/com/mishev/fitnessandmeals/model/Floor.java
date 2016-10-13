@@ -1,11 +1,19 @@
 package com.mishev.fitnessandmeals.model;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Floor {
 
+    @SerializedName("path")
     private String path;
+
+    @SerializedName("name")
     private String name;
 
+    @SerializedName("width")
     private float width;
+
+    @SerializedName("length")
     private float length;
 
     public String getPath() {

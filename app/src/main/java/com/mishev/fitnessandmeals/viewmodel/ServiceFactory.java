@@ -1,4 +1,4 @@
-package com.mishev.fitnessandmeals.service;
+package com.mishev.fitnessandmeals.viewmodel;
 
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;

@@ -7,6 +7,7 @@ import com.mishev.fitnessandmeals.BR;
 
 public class User extends BaseObservable {
 
+    //@SerializedName("picture")
     private String firstName;
     private String lastName;
 

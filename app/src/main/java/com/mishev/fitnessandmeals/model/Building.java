@@ -1,5 +1,7 @@
 package com.mishev.fitnessandmeals.model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,13 +9,14 @@ public class Building {
 
     private List<Floor> floors;
 
+    @SerializedName("name")
     private String name;
 
     public void addFloor(Floor floor) {
         if (floors == null) {
             floors = new ArrayList<>();
         }
-            //test
+
         floors.add(floor);
     }
 

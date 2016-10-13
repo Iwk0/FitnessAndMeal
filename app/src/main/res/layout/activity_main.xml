@@ -1,54 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <data>
-        <variable name="user" type="com.mishev.fitnessandmeals.model.User"/>
-        <variable name="handlers" type="com.mishev.fitnessandmeals.events.UserHandler"/>
-    </data>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <RelativeLayout
+    <FrameLayout
+        android:id="@+id/content_frame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent" />
 
-        <TextView
-            android:id="@+id/firstName"
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:text="@{user.firstName}"
-            android:layout_centerHorizontal="true"/>
+    <ListView
+        android:id="@+id/left_drawer"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#111"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp" />
 
-        <EditText
-            android:id="@+id/firstNameText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@={user.firstName}"
-            android:inputType="text"
-            android:layout_below="@+id/firstName"/>
-
-        <TextView
-            android:id="@+id/lastName"
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:text="@{user.lastName}"
-            android:layout_below="@+id/firstNameText"
-            android:layout_centerHorizontal="true"/>
-
-        <EditText
-            android:id="@+id/lastNameText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@={user.lastName}"
-            android:inputType="text"
-            android:layout_below="@+id/lastName"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="@{() -> handlers.onCreateUser(user)}"
-            android:text="@string/send_button"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"/>
-
-    </RelativeLayout>
-
-</layout>
+</android.support.v4.widget.DrawerLayout>
